@@ -7,16 +7,12 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   async rewrites() {
+    const b = backend.replace(/\/$/, "");
+    // Proxy FastAPI under /backend/* only. Do not use /chat, /documents, etc. — those are Next.js pages
+    // (e.g. /app/chat rewrites to /chat). Same-origin API calls use getPublicApiBase() → /backend by default.
     return [
-      { source: "/chat", destination: `${backend}/chat` },
-      { source: "/chat/", destination: `${backend}/chat/` },
-      { source: "/chat/:path*", destination: `${backend}/chat/:path*` },
-      { source: "/documents/:path*", destination: `${backend}/documents/:path*` },
-      { source: "/analyze/:path*", destination: `${backend}/analyze/:path*` },
-      { source: "/health", destination: `${backend}/health` },
-      { source: "/health/:path*", destination: `${backend}/health/:path*` },
-      { source: "/admin/documents", destination: `${backend}/admin/documents` },
-      { source: "/admin/documents/:path*", destination: `${backend}/admin/documents/:path*` },
+      { source: "/backend", destination: `${b}/` },
+      { source: "/backend/:path*", destination: `${b}/:path*` },
     ];
   },
 };

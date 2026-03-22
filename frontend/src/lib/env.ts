@@ -1,6 +1,8 @@
+/** Same-origin proxy prefix (see next.config.mjs rewrites). Empty env → /backend → FastAPI. */
 export function getPublicApiBase(): string {
-  if (typeof window !== "undefined") {
-    return process.env.NEXT_PUBLIC_API_URL ?? "";
+  const fromEnv = process.env.NEXT_PUBLIC_API_URL?.trim();
+  if (fromEnv) {
+    return fromEnv.replace(/\/$/, "");
   }
-  return process.env.NEXT_PUBLIC_API_URL ?? "";
+  return "/backend";
 }

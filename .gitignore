@@ -5,6 +5,7 @@ backend/.venv
 __pycache__/
 *.pyc
 node_modules/
+*.tsbuildinfo
 dist/
 .next/
 out/
