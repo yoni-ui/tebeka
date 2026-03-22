@@ -51,17 +51,23 @@ Use the **virtualenv’s** Python (`.\.venv\Scripts\python`) so dependencies mat
 
 ## 3. Frontend (Next.js)
 
+Monorepo: install from the **repo root** (npm workspaces).
+
 ```powershell
-cd frontend
 npm install
+cd frontend
 copy .env.example .env.local
 # Optional: set ADMIN_PANEL_SECRET, BACKEND_URL — see frontend/.env.example
+cd ..
 npm run dev
 ```
 
+Or from `frontend/`: `npm install` still works if you only have that folder’s deps installed.
+
 - App: http://localhost:3000  
-- **Rewrites:** Requests from the browser to `/chat`, `/documents`, `/analyze`, `/health`, and `/admin/documents` are proxied to `BACKEND_URL` (default `http://127.0.0.1:8000`).  
-- **Production:** Set `NEXT_PUBLIC_API_URL` to your public API origin if the API is on another domain (no trailing slash), or deploy API and Next together and keep rewrites.
+- **API proxy:** Same-origin `/backend/*` rewrites to `BACKEND_URL` (FastAPI). The client uses `NEXT_PUBLIC_API_URL` when set; otherwise it calls `/backend`.  
+- **Vercel:** Connect the Git repo with **default project root** (repository root). Do **not** set Root Directory to `frontend` unless you switch back to installing only inside `frontend/`.  
+- **Production:** Set `BACKEND_URL` on Vercel to your live API. Optionally set `NEXT_PUBLIC_API_URL` to that API URL (no trailing slash).
 
 ### Auth (MVP)
 

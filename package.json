@@ -1,0 +1,9 @@
+{
+  "name": "tebeka-monorepo",
+  "private": true,
+  "workspaces": ["frontend"],
+  "scripts": {
+    "build": "npm run build -w tebeka-legal-frontend",
+    "dev": "npm run dev -w tebeka-legal-frontend"
+  }
+}
