@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Management | Lexis AI Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f2f3ff",
+                        "on-primary-fixed": "#001452",
+                        "on-tertiary-fixed-variant": "#891e00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "surface-container-high": "#e2e7ff",
+                        "on-tertiary-fixed": "#3c0800",
+                        "tertiary-fixed": "#ffdbd2",
+                        "inverse-primary": "#b7c4ff",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "on-surface": "#131b2e",
+                        "primary": "#003ec7",
+                        "on-primary-container": "#dfe3ff",
+                        "outline-variant": "#c3c5d9",
+                        "secondary": "#515f74",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "surface-tint": "#004ced",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb4a1",
+                        "surface-dim": "#d2d9f4",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "secondary-container": "#d5e3fc",
+                        "error": "#ba1a1a",
+                        "tertiary": "#952200",
+                        "surface": "#faf8ff",
+                        "surface-container": "#eaedff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-background": "#131b2e",
+                        "inverse-surface": "#283044",
+                        "tertiary-container": "#bf3003",
+                        "surface-variant": "#dae2fd",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#dde1ff",
+                        "on-tertiary-container": "#ffddd5",
+                        "secondary-fixed": "#d5e3fc",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eef0ff",
+                        "surface-bright": "#faf8ff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "primary-container": "#0052ff",
+                        "background": "#faf8ff",
+                        "outline": "#737688",
+                        "on-secondary-container": "#57657a",
+                        "on-surface-variant": "#434656",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#eaedff] dark:bg-slate-900 flex flex-col py-8 px-4 z-50">
+<div class="mb-10 px-2 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-white" data-icon="gavel">gavel</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-[#131b2e] dark:text-slate-100 font-manrope">Lexis AI</h1>
+<p class="font-manrope text-[10px] font-semibold uppercase tracking-wider text-[#57657a] dark:text-slate-400">Precision Curator</p>
+</div>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#57657a] hover:bg-[#dae2fd] transition-all duration-200 ease-in-out font-manrope text-xs font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-[#dae2fd] text-[#003ec7] rounded-lg font-manrope text-xs font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                User Management
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#57657a] hover:bg-[#dae2fd] transition-all duration-200 ease-in-out font-manrope text-xs font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+                Query Logs
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#57657a] hover:bg-[#dae2fd] transition-all duration-200 ease-in-out font-manrope text-xs font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+                Model Config
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#57657a] hover:bg-[#dae2fd] transition-all duration-200 ease-in-out font-manrope text-xs font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                Security
+            </a>
+</nav>
+<div class="mt-auto space-y-1">
+<button class="w-full mb-6 bg-primary text-white py-3 rounded-lg font-manrope text-xs font-bold uppercase tracking-widest shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors active:scale-95">
+                New Analysis
+            </button>
+<a class="flex items-center gap-3 px-3 py-2 text-[#57657a] hover:bg-[#dae2fd] transition-all duration-200 ease-in-out font-manrope text-xs font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#57657a] hover:bg-[#dae2fd] transition-all duration-200 ease-in-out font-manrope text-xs font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="ml-64 flex-grow h-screen overflow-y-auto bg-surface">
+<!-- TopNavBar -->
+<header class="w-full h-16 sticky top-0 z-40 bg-[#faf8ff] flex justify-between items-center px-10">
+<div class="flex items-center flex-grow">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 transition-all font-body" placeholder="Search user directory..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4 items-center">
+<button class="p-2 text-[#57657a] hover:bg-[#eaedff] transition-colors rounded-full relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-tertiary rounded-full"></span>
+</button>
+<button class="p-2 text-[#57657a] hover:bg-[#eaedff] transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/30 mx-2"></div>
+<div class="flex items-center gap-3">
+<img alt="Admin User Profile" class="w-8 h-8 rounded-full border-2 border-primary-fixed" data-alt="Close up professional headshot of an administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwPoPRIxL3WXpXhJa179Ac0GfiQM8JQnusLCdiL4X5tN4TadYzypyFbelNetr-kVxMQfu8O72IxHKvpDO-baFJS_TxkkbiJTPXTnvuISuwSHijvWxEyFA9NaIoCwM-xZqzAMfrKa8PaBC8emhKYiB9ZZax2uZdD9-9dWVNHB0PgyvLfemEBgNYlHFgJPYPN0sCvlzz_eoDXTeYtlIuv4r1Adn-p7zYwbHKtNRacLI5Ciopiy2ys1UbQvqGuk5tOLSJ7MCh2zMruQ"/>
+<div class="hidden lg:block text-right">
+<p class="text-sm font-bold font-manrope text-[#131b2e]">Alex Sterling</p>
+<p class="text-[10px] font-semibold text-[#57657a] uppercase tracking-tighter">Senior Auditor</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="p-10 max-w-7xl mx-auto space-y-10">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold font-manrope text-on-surface tracking-tight">User Management</h2>
+<p class="text-on-secondary-container mt-1 font-body">Manage platform access, roles, and monitor individual usage metrics.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container-highest text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors font-manrope text-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="file_download">file_download</span>
+                        Export CSV
+                    </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary text-white font-semibold rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors font-manrope text-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="person_add">person_add</span>
+                        Invite User
+                    </button>
+</div>
+</div>
+<!-- Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Total Users -->
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<span class="text-[10px] font-bold text-green-600 bg-green-100 px-2 py-1 rounded">+12%</span>
+</div>
+<p class="text-on-secondary-container text-xs font-semibold uppercase tracking-widest font-manrope">Total Users</p>
+<h3 class="text-3xl font-black mt-1 font-manrope">12,842</h3>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="groups">groups</span>
+</div>
+</div>
+<!-- New Users -->
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary-container rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</div>
+<span class="text-[10px] font-bold text-green-600 bg-green-100 px-2 py-1 rounded">+5.2%</span>
+</div>
+<p class="text-on-secondary-container text-xs font-semibold uppercase tracking-widest font-manrope">Last 7 Days</p>
+<h3 class="text-3xl font-black mt-1 font-manrope">428</h3>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+<!-- Avg Queries -->
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-tertiary-fixed rounded-lg text-tertiary">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+</div>
+<span class="text-[10px] font-bold text-red-600 bg-red-100 px-2 py-1 rounded">-2.1%</span>
+</div>
+<p class="text-on-secondary-container text-xs font-semibold uppercase tracking-widest font-manrope">Avg Queries/User</p>
+<h3 class="text-3xl font-black mt-1 font-manrope">18.4</h3>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="data_usage">data_usage</span>
+</div>
+</div>
+<!-- Revenue -->
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-green-100 rounded-lg text-green-700">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<span class="text-[10px] font-bold text-green-600 bg-green-100 px-2 py-1 rounded">+18%</span>
+</div>
+<p class="text-on-secondary-container text-xs font-semibold uppercase tracking-widest font-manrope">Total Revenue</p>
+<h3 class="text-3xl font-black mt-1 font-manrope">$84,200</h3>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+</div>
+</div>
+<!-- Filters & Table Section -->
+<div class="space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-container-lowest p-4 rounded-xl">
+<div class="flex gap-4 items-center">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface rounded-lg border border-outline-variant/30 text-xs font-semibold font-manrope cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                            All Roles
+                            <span class="material-symbols-outlined text-[16px]" data-icon="expand_more">expand_more</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface rounded-lg border border-outline-variant/30 text-xs font-semibold font-manrope cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="emergency_home">emergency_home</span>
+                            Active Status
+                            <span class="material-symbols-outlined text-[16px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<p class="text-xs text-on-secondary-container font-medium">Showing <span class="text-on-surface font-bold">1-10</span> of 12,842 users</p>
+</div>
+<!-- Directory Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-y-3">
+<thead>
+<tr class="text-[10px] font-bold text-on-secondary-container uppercase tracking-widest px-4">
+<th class="pb-2 pl-6">User Details</th>
+<th class="pb-2">Role</th>
+<th class="pb-2">Joined Date</th>
+<th class="pb-2">Usage</th>
+<th class="pb-2">Status</th>
+<th class="pb-2 text-right pr-6">Actions</th>
+</tr>
+</thead>
+<tbody class="space-y-4">
+<!-- User Row 1 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="py-4 pl-6 rounded-l-xl">
+<div class="flex items-center gap-3">
+<img alt="Jane Smith Avatar" class="w-10 h-10 rounded-lg object-cover" data-alt="Corporate headshot of a smiling woman in a professional setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClDaWxDmJoYaqKArQjRSiE1y51W4R5ZyCWDF1fDtEs1hRi49sAyMxxH3d9YEwE7ezZ_ac8tJHX-qmsopwxYS4xwe8homEiZcVA2_LTRFIFTR_v5mbqA-Z0px0s5PF8OcGA-aEb1RzenzTfp8tAVlgT8EZrWS7Jl_XZv3GPtOGVtJ3OFt3DuwGsoAfGF7HqZ_563q2xL3f_s0KJ6xEL6X93CiW97psiDn1gMjCYw7mE7k2GG3wTgn6KDZWD7rLv-rxRawHp-8saww"/>
+<div>
+<p class="font-bold text-on-surface text-sm">Jane Smith</p>
+<p class="text-xs text-on-secondary-container">jane.smith@lawfirm.co</p>
+</div>
+</div>
+</td>
+<td class="py-4">
+<span class="px-2.5 py-1 bg-primary/10 text-primary text-[10px] font-black uppercase rounded-sm">PRO</span>
+</td>
+<td class="py-4">
+<p class="text-xs font-semibold text-on-surface">Oct 14, 2023</p>
+<p class="text-[10px] text-on-secondary-container">10:45 AM</p>
+</td>
+<td class="py-4">
+<div class="w-32">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] font-bold">22/25 Queries</span>
+</div>
+<div class="h-1 w-full bg-outline-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[88%]"></div>
+</div>
+</div>
+</td>
+<td class="py-4">
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 bg-green-500 rounded-full"></div>
+<span class="text-xs font-bold text-on-surface">Active</span>
+</div>
+</td>
+<td class="py-4 pr-6 rounded-r-xl text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="block">block</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 2 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="py-4 pl-6 rounded-l-xl">
+<div class="flex items-center gap-3">
+<img alt="Marcus Wright Avatar" class="w-10 h-10 rounded-lg object-cover" data-alt="Portrait of a young man with glasses looking into the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzOu2AqX8WO1o5RnlET16tJos81IFnhfCbKQ6VUuW3t4_ItAaMD4ECr5pTy0XQIbzXxmc_0_4AB3wvYH-uLRmj652sz_XJxgGKdh43Ps3EqrYwJ5n5vNTEibkF-MA7mgz5qNM7jYvw8tfayhU00Zhj6ZmELFqzu7QuW9cf6VRBj3HpE6XiO9q-CUHm64c1vMl9sNBh0DOq0Xuiq1aN1C3AMqBNTuCkhYtu2HNjnY7T0JYU3ArB7gf_pWjk6J5NFpS7QYqFsfqHOw"/>
+<div>
+<p class="font-bold text-on-surface text-sm">Marcus Wright</p>
+<p class="text-xs text-on-secondary-container">m.wright@globallegal.net</p>
+</div>
+</div>
+</td>
+<td class="py-4">
+<span class="px-2.5 py-1 bg-surface-container-highest text-secondary text-[10px] font-black uppercase rounded-sm">FREE</span>
+</td>
+<td class="py-4">
+<p class="text-xs font-semibold text-on-surface">Nov 02, 2023</p>
+<p class="text-[10px] text-on-secondary-container">02:15 PM</p>
+</td>
+<td class="py-4">
+<div class="w-32">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] font-bold">2/5 Queries</span>
+</div>
+<div class="h-1 w-full bg-outline-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[40%]"></div>
+</div>
+</div>
+</td>
+<td class="py-4">
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+<span class="text-xs font-bold text-on-surface">Pending</span>
+</div>
+</td>
+<td class="py-4 pr-6 rounded-r-xl text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="block">block</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 3 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group cursor-pointer border border-outline-variant/10">
+<td class="py-4 pl-6 rounded-l-xl">
+<div class="flex items-center gap-3">
+<img alt="David Lee Avatar" class="w-10 h-10 rounded-lg object-cover" data-alt="Professional avatar with an abstract geometric pattern background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaK_v6zyQe93kpUsGvAnV5Sjm1v6cnElX39x0dsnTMqJXsnSGlskX0beGHRxFEnUlmbTkpQ01ZsT_S6Z8YzF0YyCleCe9JIm6x7gK63vGQJ13EAQcYUfdNqpp8GlpCb04tZ4sWIyFD6GC8c3rKvlqjAU6IaiwI4044vpZ1X8AutBPrr8xL6tjWEtHO-pDIttpd1Nq8WuPc3EjjDAbDazjGw8Ba3q3SB5k9Ux_8VIlKwTS5TEPKTA7VMY2FuqaTGLcqbeX5d-jDQg"/>
+<div>
+<p class="font-bold text-on-surface text-sm">David Lee</p>
+<p class="text-xs text-on-secondary-container">d.lee@admin.lexisai.com</p>
+</div>
+</div>
+</td>
+<td class="py-4">
+<span class="px-2.5 py-1 bg-on-primary-fixed-variant/10 text-on-primary-fixed-variant text-[10px] font-black uppercase rounded-sm">ADMIN</span>
+</td>
+<td class="py-4">
+<p class="text-xs font-semibold text-on-surface">Jan 12, 2023</p>
+<p class="text-[10px] text-on-secondary-container">09:00 AM</p>
+</td>
+<td class="py-4">
+<div class="w-32">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] font-bold">Unlimited</span>
+</div>
+<div class="h-1 w-full bg-outline-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-on-primary-fixed-variant w-full"></div>
+</div>
+</div>
+</td>
+<td class="py-4">
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 bg-green-500 rounded-full"></div>
+<span class="text-xs font-bold text-on-surface">Active</span>
+</div>
+</td>
+<td class="py-4 pr-6 rounded-r-xl text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="block">block</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 4 (Suspended) -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group cursor-pointer opacity-70">
+<td class="py-4 pl-6 rounded-l-xl">
+<div class="flex items-center gap-3">
+<img alt="Rachel Adams Avatar" class="w-10 h-10 rounded-lg object-cover grayscale" data-alt="Portrait of a woman with short dark hair in high contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmQMRIe2NUqiZO8FV5U-4XgFEtBCtaWyUUKDV4B5x4wY4U_K_IFZX0itFQo7_IQ74DIUJPawBtEFd47D-uKsgzmG1KPiSJegO9PmtHV2mOIRXXEYvm8xyY3c1-YCloJodxl4rob1qnXtgNRAx82f7b_PX1MSrV1fgLf61BOwzwatAEqFAwaa3qswMNpVtQrAiVbwOc9-R6MKiAKpUOx_1mxqumwzZmafgF1NJheC2BrxvdCxtERQVQ9BoNMH82teRVUTu_bsD2TA"/>
+<div>
+<p class="font-bold text-on-surface text-sm line-through">Rachel Adams</p>
+<p class="text-xs text-on-secondary-container">r.adams@legal-limited.org</p>
+</div>
+</div>
+</td>
+<td class="py-4">
+<span class="px-2.5 py-1 bg-surface-container-highest text-secondary text-[10px] font-black uppercase rounded-sm">PRO</span>
+</td>
+<td class="py-4">
+<p class="text-xs font-semibold text-on-surface">Aug 28, 2023</p>
+<p class="text-[10px] text-on-secondary-container">11:12 AM</p>
+</td>
+<td class="py-4">
+<div class="w-32">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] font-bold">12/25 Queries</span>
+</div>
+<div class="h-1 w-full bg-outline-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-outline w-[48%]"></div>
+</div>
+</div>
+</td>
+<td class="py-4">
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 bg-error rounded-full"></div>
+<span class="text-xs font-bold text-on-surface">Suspended</span>
+</div>
+</td>
+<td class="py-4 pr-6 rounded-r-xl text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-highest rounded text-on-secondary-container hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between py-4">
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-xs font-bold font-manrope hover:bg-surface-container transition-colors disabled:opacity-50">
+                        Previous
+                    </button>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded-lg text-xs font-bold font-manrope">1</button>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-lowest text-on-surface rounded-lg text-xs font-bold font-manrope hover:bg-surface-container transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-lowest text-on-surface rounded-lg text-xs font-bold font-manrope hover:bg-surface-container transition-colors">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-on-secondary-container text-xs">...</span>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-lowest text-on-surface rounded-lg text-xs font-bold font-manrope hover:bg-surface-container transition-colors">12</button>
+</div>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-xs font-bold font-manrope hover:bg-surface-container transition-colors">
+                        Next
+                    </button>
+</div>
+</div>
+<!-- Details Sidebar Concept (Asymmetric Component) -->
+<div class="flex flex-col lg:flex-row gap-8 pt-10 border-t border-outline-variant/20">
+<div class="lg:w-2/3 space-y-6">
+<div class="bg-surface-container-low p-8 rounded-2xl">
+<h4 class="text-xl font-extrabold font-manrope mb-4">User Growth Analysis</h4>
+<div class="h-64 flex items-end gap-2">
+<div class="flex-1 bg-primary/20 h-[30%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[55%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[80%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[95%] rounded-t-sm relative group">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    Today: +42 Users
+                                </div>
+</div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-on-secondary-container uppercase tracking-widest">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+</div>
+<div class="lg:w-1/3 space-y-6">
+<div class="bg-[#131b2e] text-white p-8 rounded-2xl relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-[10px] font-black uppercase tracking-widest opacity-60">System Health</p>
+<h4 class="text-lg font-bold font-manrope mt-2">API Connectivity</h4>
+<div class="mt-6 flex items-center gap-4">
+<div class="w-16 h-16 rounded-full border-4 border-green-500 flex items-center justify-center">
+<span class="text-xs font-black">99.9%</span>
+</div>
+<div class="space-y-1">
+<p class="text-xs font-bold">Token Efficiency</p>
+<div class="h-1.5 w-32 bg-white/10 rounded-full">
+<div class="h-full bg-green-500 w-[92%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full -mr-16 -mt-16"></div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-2xl border border-primary/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<p class="text-xs font-bold font-manrope uppercase tracking-widest text-primary">Admin Quick Tip</p>
+</div>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed">
+                            Pro users approaching query limits are automatically flagged for account management review every Monday at 08:00 UTC.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Suppressed on User Detail View but present here as this is the Dashboard-level directory) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-[#131b2e] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</body></html>

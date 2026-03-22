@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdbd2",
+              "primary": "#003ec7",
+              "inverse-on-surface": "#eef0ff",
+              "tertiary-container": "#bf3003",
+              "surface-tint": "#004ced",
+              "on-tertiary-fixed": "#3c0800",
+              "on-primary": "#ffffff",
+              "primary-fixed": "#dde1ff",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "primary-container": "#0052ff",
+              "on-error": "#ffffff",
+              "on-surface": "#131b2e",
+              "on-tertiary-container": "#ffddd5",
+              "secondary-container": "#d5e3fc",
+              "tertiary-fixed-dim": "#ffb4a1",
+              "surface-container-low": "#f2f3ff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#eaedff",
+              "on-secondary-fixed": "#0d1c2e",
+              "surface-container-highest": "#dae2fd",
+              "on-error-container": "#93000a",
+              "error": "#ba1a1a",
+              "on-background": "#131b2e",
+              "outline-variant": "#c3c5d9",
+              "on-secondary": "#ffffff",
+              "secondary-fixed": "#d5e3fc",
+              "on-secondary-fixed-variant": "#3a485b",
+              "on-surface-variant": "#434656",
+              "surface-variant": "#dae2fd",
+              "surface-container-high": "#e2e7ff",
+              "surface-bright": "#faf8ff",
+              "primary-fixed-dim": "#b7c4ff",
+              "on-secondary-container": "#57657a",
+              "outline": "#737688",
+              "background": "#faf8ff",
+              "on-tertiary-fixed-variant": "#891e00",
+              "surface-dim": "#d2d9f4",
+              "inverse-surface": "#283044",
+              "inverse-primary": "#b7c4ff",
+              "tertiary": "#952200",
+              "on-primary-container": "#dfe3ff",
+              "surface": "#faf8ff",
+              "secondary-fixed-dim": "#b9c7df",
+              "on-primary-fixed-variant": "#0038b6",
+              "secondary": "#515f74",
+              "on-primary-fixed": "#001452"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            background: rgba(242, 243, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .blueprint-grid {
+            background-image: radial-gradient(circle, #c3c5d9 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf8ff] dark:bg-slate-950">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-[#131b2e] dark:text-slate-100 font-headline tracking-tighter">LegalAI</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-manrope text-sm font-medium tracking-tight text-[#131b2e] dark:text-slate-400 opacity-80 hover:text-[#0052FF] dark:hover:text-white transition-colors" href="#">Features</a>
+<a class="font-manrope text-sm font-semibold tracking-tight text-[#0052FF] dark:text-[#3b82f6] border-b-2 border-[#0052FF] pb-1" href="#">Pricing</a>
+<a class="font-manrope text-sm font-medium tracking-tight text-[#131b2e] dark:text-slate-400 opacity-80 hover:text-[#0052FF] dark:hover:text-white transition-colors" href="#">About</a>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-headline text-sm font-semibold hover:bg-primary-container transition-all active:opacity-70">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-8 py-20 overflow-hidden">
+<div class="blueprint-grid absolute inset-0 pointer-events-none"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-widest uppercase rounded-sm mb-6">Subscription Plans</span>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-6">
+                    Professional Legal Intelligence, <span class="text-primary">Accessible for All.</span>
+</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                    Choose the plan that fits your legal workflow, from solo practice to enterprise scale. 
+                    Built on high-fidelity RAG architecture for unmatched precision.
+                </p>
+</div>
+</section>
+<!-- Pricing Tiers -->
+<section class="px-8 pb-32">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Free Plan -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/15 flex flex-col hover:bg-surface-container-low transition-colors duration-300">
+<div class="mb-8">
+<h3 class="font-headline text-xl font-bold mb-2">Free Plan</h3>
+<p class="text-on-secondary-container text-sm">Essential Exploration</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold">$0</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            3 document analyses/mo
+                        </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Basic AI chat
+                        </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            24-hour response time
+                        </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            5MB file limit
+                        </li>
+</ul>
+<button class="w-full py-3 bg-surface-container-highest text-primary font-headline font-bold rounded-lg hover:bg-primary hover:text-on-primary transition-all">
+                        Get Started Free
+                    </button>
+</div>
+<!-- Pro Individual -->
+<div class="relative bg-surface-container-lowest p-8 rounded-xl border-2 border-primary flex flex-col transform md:-translate-y-4 shadow-xl">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
+                        Most Popular
+                    </div>
+<div class="mb-8">
+<h3 class="font-headline text-xl font-bold mb-2">Pro Individual</h3>
+<p class="text-on-secondary-container text-sm font-medium">Power User</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold">$49</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            25 document analyses/mo
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Advanced Gemini analysis
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Priority chat support
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            50MB file limit
+                        </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Export to PDF/Figma
+                        </li>
+</ul>
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold rounded-lg shadow-md hover:opacity-90 transition-all">
+                        Start Pro Trial
+                    </button>
+</div>
+<!-- Enterprise -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/15 flex flex-col hover:bg-surface-container-low transition-colors duration-300">
+<div class="mb-8">
+<h3 class="font-headline text-xl font-bold mb-2">Enterprise</h3>
+<p class="text-on-secondary-container text-sm">Firm Scale</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold italic">Custom</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Unlimited analyses
+                        </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Dedicated LLM instances
+                        </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Full API access
+                        </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Custom database training
+                        </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            24/7 account manager
+                        </li>
+</ul>
+<button class="w-full py-3 bg-on-surface text-surface-bright font-headline font-bold rounded-lg hover:opacity-90 transition-all">
+                        Contact Sales
+                    </button>
+</div>
+</div>
+</section>
+<!-- Feature Comparison -->
+<section class="bg-surface-container-low py-32 px-8">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline text-3xl font-bold mb-4">Compare Features</h2>
+<p class="text-on-surface-variant">A technical breakdown of our platform capabilities.</p>
+</div>
+<div class="overflow-hidden bg-surface-container-lowest rounded-xl shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high">
+<th class="p-6 font-headline font-bold text-sm">Feature</th>
+<th class="p-6 font-headline font-bold text-sm">Free</th>
+<th class="p-6 font-headline font-bold text-sm">Pro</th>
+<th class="p-6 font-headline font-bold text-sm">Enterprise</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr>
+<td class="p-6 text-sm font-semibold">Analysis Quality</td>
+<td class="p-6 text-sm text-on-surface-variant">Standard RAG</td>
+<td class="p-6 text-sm text-on-surface-variant">Advanced Gemini 1.5</td>
+<td class="p-6 text-sm text-on-surface-variant">Custom Tuned LLM</td>
+</tr>
+<tr>
+<td class="p-6 text-sm font-semibold">Support Level</td>
+<td class="p-6 text-sm text-on-surface-variant">Email (48h)</td>
+<td class="p-6 text-sm text-on-surface-variant">Priority Chat</td>
+<td class="p-6 text-sm text-on-surface-variant">Dedicated Manager</td>
+</tr>
+<tr>
+<td class="p-6 text-sm font-semibold">Security Features</td>
+<td class="p-6 text-sm text-on-surface-variant">Standard SSL</td>
+<td class="p-6 text-sm text-on-surface-variant">Data Encryption</td>
+<td class="p-6 text-sm text-on-surface-variant">SOC2 + Custom Governance</td>
+</tr>
+<tr>
+<td class="p-6 text-sm font-semibold">API Access</td>
+<td class="p-6 text-sm text-on-surface-variant">None</td>
+<td class="p-6 text-sm text-on-surface-variant">Read-only</td>
+<td class="p-6 text-sm text-on-surface-variant">Full Read/Write</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="py-24 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="bg-inverse-surface rounded-2xl p-12 relative">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline text-3xl font-bold text-inverse-on-surface mb-6">Enterprise-grade security.</h2>
+<p class="text-surface-container-high leading-relaxed text-lg mb-8">
+                                SOC2 compliant. Data encryption at rest and in transit. Your legal data never leaves your private instance.
+                            </p>
+<div class="flex flex-wrap gap-4">
+<div class="bg-surface-container-low/10 px-4 py-2 rounded flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed">verified_user</span>
+<span class="text-xs font-bold text-inverse-on-surface">SOC2 TYPE II</span>
+</div>
+<div class="bg-surface-container-low/10 px-4 py-2 rounded flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed">lock</span>
+<span class="text-xs font-bold text-inverse-on-surface">AES-256</span>
+</div>
+<div class="bg-surface-container-low/10 px-4 py-2 rounded flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed">shield</span>
+<span class="text-xs font-bold text-inverse-on-surface">GDPR COMPLIANT</span>
+</div>
+</div>
+</div>
+<div class="relative flex justify-center">
+<div class="w-64 h-64 rounded-full bg-primary/20 absolute blur-3xl"></div>
+<img class="w-full max-w-sm rounded-xl shadow-2xl relative z-10 border border-outline-variant/20 grayscale opacity-80" data-alt="Technical security visualization with binary code patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbMP8HI13nvHT03QgUszGvRHAa3pOFmj_mFVGPnlwFb_hTcWVA9O798pn50lip3Xq8TjOg0t_mmegHy_j3tE8q22AnCmw5-O0xIR8fANw6tEikH4wFvLCL6ptV0Ec085LUquak_UPhxmvg5xOeNq22aoMh8c59cp0tLAc3Y6SOaHGn0npxmFF00ARafHhGmrLV4hjm4I_D3RaouZTgDd7UYlXx0YdM07X_i0wStdur1Khqb3_wzZ59z2xt-3bv0qrtnsSoYoeaZg"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 px-8">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+<p class="text-on-surface-variant">Everything you need to know about our legal assistant AI.</p>
+</div>
+<div class="space-y-6">
+<div class="p-6 bg-surface-container-lowest rounded-lg border border-outline-variant/15">
+<h4 class="font-headline font-bold text-lg mb-3">How does the billing work?</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">We bill monthly or annually. Annual plans receive a 20% discount. You can upgrade or downgrade your plan at any time through your account settings.</p>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-lg border border-outline-variant/15">
+<h4 class="font-headline font-bold text-lg mb-3">Can I cancel my subscription?</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Yes, you can cancel at any time. You will continue to have access to your plan's features until the end of your current billing period.</p>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-lg border border-outline-variant/15">
+<h4 class="font-headline font-bold text-lg mb-3">Is my data private and secure?</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Absolutely. We do not use your private legal documents to train our global models. Your data is isolated in secure, encrypted storage environments.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#eaedff] dark:bg-slate-900 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto space-y-4 md:space-y-0">
+<div class="text-lg font-bold text-[#131b2e] dark:text-slate-200 font-headline">LegalAI</div>
+<div class="flex gap-8">
+<a class="font-inter text-xs text-[#57657a] dark:text-slate-400 hover:underline hover:text-[#0052FF] dark:hover:text-white" href="#">Privacy Policy</a>
+<a class="font-inter text-xs text-[#57657a] dark:text-slate-400 hover:underline hover:text-[#0052FF] dark:hover:text-white" href="#">Terms of Service</a>
+<a class="font-inter text-xs text-[#57657a] dark:text-slate-400 hover:underline hover:text-[#0052FF] dark:hover:text-white" href="#">Security</a>
+<a class="font-inter text-xs text-[#57657a] dark:text-slate-400 hover:underline hover:text-[#0052FF] dark:hover:text-white" href="#">Contact</a>
+</div>
+<div class="font-inter text-xs text-[#57657a] dark:text-slate-400">© 2024 LegalAI Intelligence. All rights reserved.</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forgot Password | LexisAI</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface": "#faf8ff",
+                "primary-container": "#0052ff",
+                "on-primary-fixed": "#001452",
+                "on-background": "#131b2e",
+                "surface-container-high": "#e2e7ff",
+                "on-surface": "#131b2e",
+                "on-tertiary-container": "#ffddd5",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed": "#3c0800",
+                "on-primary": "#ffffff",
+                "surface-container-highest": "#dae2fd",
+                "on-tertiary-fixed-variant": "#891e00",
+                "primary-fixed-dim": "#b7c4ff",
+                "inverse-surface": "#283044",
+                "surface-container": "#eaedff",
+                "inverse-primary": "#b7c4ff",
+                "on-tertiary": "#ffffff",
+                "surface-bright": "#faf8ff",
+                "on-error": "#ffffff",
+                "surface-dim": "#d2d9f4",
+                "on-secondary-fixed-variant": "#3a485b",
+                "outline-variant": "#c3c5d9",
+                "on-primary-container": "#dfe3ff",
+                "secondary": "#515f74",
+                "inverse-on-surface": "#eef0ff",
+                "tertiary-fixed-dim": "#ffb4a1",
+                "secondary-fixed-dim": "#b9c7df",
+                "outline": "#737688",
+                "primary-fixed": "#dde1ff",
+                "primary": "#003ec7",
+                "secondary-container": "#d5e3fc",
+                "on-primary-fixed-variant": "#0038b6",
+                "background": "#faf8ff",
+                "on-surface-variant": "#434656",
+                "surface-container-low": "#f2f3ff",
+                "surface-variant": "#dae2fd",
+                "surface-tint": "#004ced",
+                "secondary-fixed": "#d5e3fc",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed": "#0d1c2e",
+                "tertiary-fixed": "#ffdbd2",
+                "error-container": "#ffdad6",
+                "tertiary-container": "#bf3003",
+                "on-secondary-container": "#57657a",
+                "on-secondary": "#ffffff",
+                "tertiary": "#952200",
+                "surface-container-lowest": "#ffffff"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .blueprint-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-primary overflow-hidden">
+<main class="flex min-h-screen">
+<!-- Left Panel: Deep Navy Branding -->
+<section class="hidden lg:flex lg:w-1/2 bg-inverse-surface relative overflow-hidden flex-col justify-between p-16">
+<!-- Background Elements -->
+<div class="absolute inset-0 blueprint-pattern opacity-20"></div>
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary opacity-20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-black/40 to-transparent"></div>
+<!-- Content -->
+<div class="relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">balance</span>
+</div>
+<span class="font-headline text-2xl font-bold text-white tracking-tight">LexisAI</span>
+</div>
+</div>
+<div class="relative z-10 max-w-lg">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-xs font-label uppercase tracking-widest text-primary-fixed">Enterprise Recovery</span>
+</div>
+<h1 class="font-headline text-5xl font-extrabold text-white leading-tight mb-6">
+                    Precision-Powered Legal Recovery.
+                </h1>
+<p class="text-xl text-on-primary-container leading-relaxed opacity-80">
+                    Regain access to your secure legal workspace with a one-time reset link.
+                </p>
+</div>
+<div class="relative z-10 pt-12 border-t border-white/10">
+<div class="flex gap-8">
+<div class="flex flex-col">
+<span class="text-primary-fixed-dim font-headline font-bold text-2xl">99.9%</span>
+<span class="text-xs text-on-primary-container/60 uppercase tracking-widest">Uptime SLA</span>
+</div>
+<div class="flex flex-col">
+<span class="text-primary-fixed-dim font-headline font-bold text-2xl">AES-256</span>
+<span class="text-xs text-on-primary-container/60 uppercase tracking-widest">Encryption</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Panel: Password Reset Form -->
+<section class="w-full lg:w-1/2 bg-surface-container-lowest flex flex-col justify-center items-center px-6 md:px-24">
+<div class="w-full max-w-md">
+<!-- Mobile Branding -->
+<div class="lg:hidden flex items-center gap-2 mb-12">
+<span class="material-symbols-outlined text-primary text-3xl">balance</span>
+<span class="font-headline text-xl font-bold">LexisAI</span>
+</div>
+<div class="space-y-2 mb-10">
+<h2 class="font-headline text-3xl font-bold tracking-tight text-on-surface">Reset your password</h2>
+<p class="text-secondary text-base">Enter the email address associated with your account and we'll send you a link to reset your password.</p>
+</div>
+<form class="space-y-6" onsubmit="return false;">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-on-surface-variant" for="email">Email address</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors">mail</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-3.5 bg-surface-container-low border border-outline-variant/30 rounded-lg text-on-surface placeholder:text-outline/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" id="email" name="email" placeholder="name@firm.com" required="" type="email"/>
+</div>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-white font-semibold rounded-lg shadow-lg shadow-primary/10 hover:shadow-primary/20 active:scale-[0.98] transition-all duration-150 flex items-center justify-center gap-2" type="submit">
+                        Send Reset Link
+                        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</form>
+<div class="mt-8 text-center">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-on-primary-fixed-variant transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                        Back to Login
+                    </a>
+</div>
+</div>
+<!-- Footer (Auth Flow Context) -->
+<footer class="absolute bottom-8 w-full max-w-md flex justify-between px-6 lg:px-0">
+<div class="flex gap-6">
+<a class="text-xs font-label text-outline hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-label text-outline hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+</div>
+<p class="text-xs font-label text-outline/60">© 2024 LexisAI Precision Systems</p>
+</footer>
+</section>
+</main>
+<!-- Decoration Layer for High-Fidelity Feel -->
+<div class="fixed top-0 right-0 p-8 pointer-events-none hidden lg:block">
+<div class="flex items-center gap-2 text-outline/40 font-label text-[10px] tracking-widest uppercase">
+<span>System Status: Optimal</span>
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+</div>
+</div>
+</body></html>

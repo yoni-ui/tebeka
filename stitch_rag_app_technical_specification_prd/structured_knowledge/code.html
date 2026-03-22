@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Knowledge Curator | Legal Intelligence Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#dae2fd",
+              "tertiary-container": "#bf3003",
+              "secondary-fixed-dim": "#b9c7df",
+              "outline-variant": "#c3c5d9",
+              "secondary-fixed": "#d5e3fc",
+              "on-tertiary-fixed": "#3c0800",
+              "on-primary": "#ffffff",
+              "surface-container-low": "#f2f3ff",
+              "surface-bright": "#faf8ff",
+              "on-tertiary-fixed-variant": "#891e00",
+              "primary-fixed-dim": "#b7c4ff",
+              "on-primary-container": "#dfe3ff",
+              "surface-container-highest": "#dae2fd",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#3a485b",
+              "inverse-on-surface": "#eef0ff",
+              "surface-tint": "#004ced",
+              "primary": "#003ec7",
+              "inverse-surface": "#283044",
+              "secondary": "#515f74",
+              "primary-container": "#0052ff",
+              "surface": "#faf8ff",
+              "on-primary-fixed": "#001452",
+              "inverse-primary": "#b7c4ff",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "outline": "#737688",
+              "tertiary-fixed-dim": "#ffb4a1",
+              "on-secondary-container": "#57657a",
+              "on-surface": "#131b2e",
+              "on-secondary": "#ffffff",
+              "background": "#faf8ff",
+              "on-surface-variant": "#434656",
+              "on-background": "#131b2e",
+              "surface-dim": "#d2d9f4",
+              "primary-fixed": "#dde1ff",
+              "secondary-container": "#d5e3fc",
+              "tertiary-fixed": "#ffdbd2",
+              "surface-container": "#eaedff",
+              "error": "#ba1a1a",
+              "tertiary": "#952200",
+              "on-secondary-fixed": "#0d1c2e",
+              "on-primary-fixed-variant": "#0038b6",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e2e7ff",
+              "on-tertiary-container": "#ffddd5",
+              "on-error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(242, 243, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<header class="fixed top-0 z-50 w-full bg-[#faf8ff] dark:bg-slate-950 flex justify-between items-center px-6 py-3 border-b border-[#c3c5d9]/15">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#131b2e] dark:text-[#faf8ff] font-headline tracking-tight">Legal Intelligence Admin</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-[#57657a] dark:text-slate-400 hover:text-[#003ec7] transition-colors duration-200" href="#">Dashboard</a>
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-[#57657a] dark:text-slate-400 hover:text-[#003ec7] transition-colors duration-200" href="#">System Health</a>
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-[#57657a] dark:text-slate-400 hover:text-[#003ec7] transition-colors duration-200" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors cursor-pointer" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary rounded-full"></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="help_outline">help_outline</span>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest border border-outline-variant/20 overflow-hidden">
+<img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="User avatar for legal admin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiGkAZnAVcG-LFAIbSFq8UOnckG2Wr504d3BL6Nmeg_Zl1fCYcGQbqXZJiuEce_J_AI_8H7iyukH_NK5s6u_OKxQd4qjHoaXfhbp-V0bvsPvkxH_Hr05NS7b5C6ZPYLla6nGSzeiXN0zxswn7rYqP2XfOv-gvB1bOhK7MBVOwvJKSM7pY6bu0qbSXavamJpKFM3sInNdgy34n2E2SDBiP5xs0PG7bvwbfYYkxc-FvsowBes8TyU-wqwlyel_grwV6hWs3mjrbY_g"/>
+</div>
+</div>
+</header>
+<aside class="h-screen w-64 fixed left-0 top-0 pt-16 bg-[#eaedff] dark:bg-slate-900 flex flex-col border-r border-[#c3c5d9]/15">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="p-2 bg-primary rounded-lg text-on-primary">
+<span class="material-symbols-outlined" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-[#131b2e] dark:text-white font-headline leading-none">Precision Curator</h2>
+<p class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant/70 mt-1">Admin v2.4.0</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="bg-[#dae2fd] dark:bg-[#0052FF]/20 text-[#0052FF] dark:text-[#0052FF] rounded-md font-bold px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs uppercase tracking-wider transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span>Knowledge Base</span>
+</a>
+<a class="text-[#57657a] dark:text-slate-400 px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs uppercase tracking-wider hover:bg-[#dae2fd]/50 transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="Format_shapes">format_shapes</span>
+<span>Chunk Editor</span>
+</a>
+<a class="text-[#57657a] dark:text-slate-400 px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs uppercase tracking-wider hover:bg-[#dae2fd]/50 transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Query Logs</span>
+</a>
+<a class="text-[#57657a] dark:text-slate-400 px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs uppercase tracking-wider hover:bg-[#dae2fd]/50 transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span>Model Config</span>
+</a>
+<a class="text-[#57657a] dark:text-slate-400 px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs uppercase tracking-wider hover:bg-[#dae2fd]/50 transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="shield_person">shield_person</span>
+<span>User Access</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 space-y-4">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-3 rounded-lg font-bold text-xs uppercase tracking-widest shadow-lg shadow-primary/20 flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span>Deploy Updates</span>
+<span class="material-symbols-outlined text-sm" data-icon="publish">publish</span>
+</button>
+<div class="pt-4 border-t border-[#c3c5d9]/20 flex flex-col gap-2">
+<a class="text-[#57657a] dark:text-slate-400 flex items-center gap-2 font-['Inter'] text-xs uppercase tracking-wider hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
+<span>Docs</span>
+</a>
+<a class="text-[#57657a] dark:text-slate-400 flex items-center gap-2 font-['Inter'] text-xs uppercase tracking-wider hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="contact_support">contact_support</span>
+<span>Support</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="ml-64 pt-16 min-h-screen bg-surface-container-low">
+<div class="max-w-6xl mx-auto px-10 py-12">
+<header class="mb-12">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Precision Drafting Tool</span>
+<div class="h-[1px] w-12 bg-primary/30"></div>
+</div>
+<h1 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight mb-4">Structured Knowledge</h1>
+<p class="text-on-surface-variant max-w-2xl leading-relaxed">
+                    Formalize high-fidelity legal rules for the RAG engine. Maintain strict data integrity by defining rules, potential risks, and their underlying legal logic.
+                </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<section class="lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-8 pb-4 border-b border-surface-container">
+<span class="material-symbols-outlined text-primary" data-icon="edit_note" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+<h2 class="text-lg font-bold font-headline">New Rule Specification</h2>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Law Category</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg text-sm font-medium py-3 px-4 focus:ring-2 focus:ring-primary transition-all appearance-none cursor-pointer">
+<option>Corporate Compliance</option>
+<option>Intellectual Property</option>
+<option>Employment Law</option>
+<option>Data Privacy (GDPR/CCPA)</option>
+<option>Financial Regulation</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Security Tier</label>
+<div class="flex gap-2">
+<button class="flex-1 py-3 px-2 text-[10px] font-bold border border-primary text-primary rounded-lg uppercase" type="button">Standard</button>
+<button class="flex-1 py-3 px-2 text-[10px] font-bold bg-surface-container-high text-on-surface-variant rounded-lg uppercase" type="button">Restricted</button>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Rule Statement</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg text-sm py-3 px-4 focus:ring-2 focus:ring-primary transition-all resize-none placeholder:text-outline/50" placeholder="Enter the precise legal rule..." rows="3"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Risk Assessment</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg text-sm py-3 px-4 focus:ring-2 focus:ring-primary transition-all resize-none placeholder:text-outline/50" placeholder="Identify potential liabilities..." rows="4"></textarea>
+</div>
+<div class="space-y-2">
+<label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Legal Explanation</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg text-sm py-3 px-4 focus:ring-2 focus:ring-primary transition-all resize-none placeholder:text-outline/50" placeholder="Citations and logical reasoning..." rows="4"></textarea>
+</div>
+</div>
+<div class="pt-6 flex justify-end gap-4">
+<button class="px-6 py-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" type="button">Clear Form</button>
+<button class="px-8 py-3 bg-primary text-on-primary rounded-lg text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-primary-container transition-all" type="submit">
+<span>Commit Rule</span>
+<span class="material-symbols-outlined text-sm" data-icon="add_task">add_task</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-primary/5 rounded-xl p-6 border border-primary/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+<h3 class="font-bold text-sm uppercase tracking-wide">Quick Assistant</h3>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                            Rules added here are indexed immediately. Ensure "Law Category" matches the target RAG collection to avoid query latency.
+                        </p>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-primary/10 flex items-center justify-between group cursor-pointer hover:border-primary/30 transition-all">
+<span class="text-xs font-medium">Auto-link Citations</span>
+<span class="material-symbols-outlined text-primary text-lg" data-icon="toggle_on" style="font-variation-settings: 'FILL' 1;">toggle_on</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-primary/10 flex items-center justify-between group cursor-pointer hover:border-primary/30 transition-all">
+<span class="text-xs font-medium">Consistency Check</span>
+<span class="material-symbols-outlined text-primary text-lg" data-icon="toggle_on" style="font-variation-settings: 'FILL' 1;">toggle_on</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest/30 rounded-xl p-6 border border-outline-variant/15">
+<h3 class="font-bold text-xs uppercase tracking-[0.2em] mb-4 text-on-surface-variant">Draft Stats</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Rules Added Today</span>
+<span class="text-xl font-headline font-bold">24</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">Validation Rate</span>
+<span class="text-xl font-headline font-bold">98.2%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[98%]"></div>
+</div>
+</div>
+</div>
+</aside>
+<section class="lg:col-span-12 mt-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<h2 class="text-xl font-extrabold font-headline">Recently Added Rules</h2>
+<div class="relative max-w-sm w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="search">search</span>
+<input class="w-full bg-surface-container border border-outline-variant/20 rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary transition-all" placeholder="Search knowledge base..." type="text"/>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/15 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/10">
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Category</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Rule Abstract</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Risk Level</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Created</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="px-6 py-4">
+<span class="text-[11px] font-bold px-2 py-1 bg-secondary-container text-on-secondary-container rounded uppercase tracking-tighter">Compliance</span>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium line-clamp-1">Mandatory disclosure of high-frequency trading latency in quarterly reports...</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-error"></div>
+<span class="text-xs font-semibold">Critical</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-xs text-on-surface-variant">2 mins ago</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="px-6 py-4">
+<span class="text-[11px] font-bold px-2 py-1 bg-secondary-container text-on-secondary-container rounded uppercase tracking-tighter">IP Law</span>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium line-clamp-1">Definition of "Substantial Similarity" in algorithmic pattern matching patents...</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+<span class="text-xs font-semibold">Moderate</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-xs text-on-surface-variant">14 mins ago</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/40 transition-colors group">
+<td class="px-6 py-4">
+<span class="text-[11px] font-bold px-2 py-1 bg-secondary-container text-on-secondary-container rounded uppercase tracking-tighter">Data Privacy</span>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium line-clamp-1">Right to erasure for non-persistent machine learning weights in cross-border transfers...</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="text-xs font-semibold">Informatative</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="text-xs text-on-surface-variant">1 hour ago</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="p-4 bg-surface-container-low border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Showing 3 of 1,492 entries</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-surface-container-highest text-primary rounded text-xs font-bold uppercase tracking-tighter">Prev</button>
+<button class="px-3 py-1 bg-primary text-on-primary rounded text-xs font-bold uppercase tracking-tighter">Next</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

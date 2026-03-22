@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | Legal Assistant AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#b7c4ff",
+              "background": "#faf8ff",
+              "surface-tint": "#004ced",
+              "secondary-fixed": "#d5e3fc",
+              "secondary-container": "#d5e3fc",
+              "primary-container": "#0052ff",
+              "on-tertiary-container": "#ffddd5",
+              "on-secondary": "#ffffff",
+              "tertiary": "#952200",
+              "outline": "#737688",
+              "surface-dim": "#d2d9f4",
+              "on-secondary-fixed": "#0d1c2e",
+              "on-primary-fixed-variant": "#0038b6",
+              "primary-fixed": "#dde1ff",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#dfe3ff",
+              "tertiary-fixed": "#ffdbd2",
+              "on-primary-fixed": "#001452",
+              "outline-variant": "#c3c5d9",
+              "on-background": "#131b2e",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#3a485b",
+              "surface-container-highest": "#dae2fd",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb4a1",
+              "on-tertiary-fixed-variant": "#891e00",
+              "tertiary-container": "#bf3003",
+              "secondary": "#515f74",
+              "inverse-on-surface": "#eef0ff",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#57657a",
+              "inverse-surface": "#283044",
+              "primary": "#003ec7",
+              "on-surface": "#131b2e",
+              "surface-bright": "#faf8ff",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#faf8ff",
+              "surface-variant": "#dae2fd",
+              "error": "#ba1a1a",
+              "surface-container": "#eaedff",
+              "secondary-fixed-dim": "#b9c7df",
+              "primary-fixed-dim": "#b7c4ff",
+              "surface-container-high": "#e2e7ff",
+              "on-tertiary-fixed": "#3c0800",
+              "surface-container-low": "#f2f3ff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#434656"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-blueprint {
+            background-image: radial-gradient(circle at 2px 2px, rgba(223, 227, 255, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(195, 197, 217, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-hidden">
+<main class="flex min-h-screen">
+<!-- Left Panel: Brand Anchor (Suppressing Nav Shell per Logic) -->
+<section class="hidden lg:flex w-1/2 bg-on-background relative flex-col justify-between p-16 overflow-hidden">
+<!-- Blueprint Background Effect -->
+<div class="absolute inset-0 bg-blueprint"></div>
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary opacity-10 rounded-full blur-[120px]"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">gavel</span>
+</div>
+<span class="font-headline text-2xl font-bold tracking-tight text-surface-bright">LexisAI</span>
+</div>
+</div>
+<div class="relative z-10 max-w-lg">
+<h1 class="font-headline text-5xl font-extrabold text-surface-bright leading-tight tracking-tighter mb-6">
+                    Your Trusted Legal Intelligence Partner.
+                </h1>
+<p class="text-surface-variant text-lg leading-relaxed mb-10 opacity-80">
+                    Access your secure workspace and start analyzing complex documents in seconds. Precision curated intelligence for the modern legal professional.
+                </p>
+<!-- Security Badge -->
+<div class="inline-flex items-center gap-3 px-4 py-2 bg-on-surface-variant/20 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary-fixed text-sm">verified_user</span>
+<span class="font-label text-xs font-semibold tracking-widest text-surface-bright uppercase">AES-256 BANK-GRADE ENCRYPTION</span>
+</div>
+</div>
+<div class="relative z-10">
+<div class="glass-panel p-6 rounded-xl">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-on-background" data-alt="Corporate headshot of a legal partner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh3GigogFlJvP8yDIGfDkKGRGmCbft9P9_BZpvC_GfP4hiOR8677AHK70eTn9HiPPb_EEyjNnXntvoFouKzXWtNsc4hBFbF22LlqvhZ-m23EGJhlA4L5PRszsDlgb9vjbOmFlZORTKehfncamBbHBzo9HzOh0f5lwMAn_U27Ol7_NpYMF60iBTvIPIGvqyAwm9Vx3EhMhN-gWHdtC4dO4ZNz4en4drJjGSlBnAB48AGmfPEM_cCRownyNqeHEzaiG_N9_2YGkIxw"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-on-background" data-alt="Portrait of a senior lawyer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoWmFnhBr6FPNWZQHfe-hf_GopuVR_wzYD-coLxQr_pA4P6D0StsCeunLwCqaQ7r67r1YMW8AqJkIAILcNeEKok5LTyyBX3C09ZTmDu40WzthEKv01TpD2WdNd0Oh67bBEnS-6E-Id3JeSSIt_YYyoAOZJn8UeKvL3MY_Ti20FRsxWgIrBUaiz4qxD6z8NwMaXhJoN8ngV3A4calZZvs_Or2M4VfbBjZ03NHc_yTJWt2PMqULIVIFwc7lsp1_ZigMuvOQAYyNmUA"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-on-background" data-alt="Professional female legal associate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJeHDmsb24GUHqvkDvq7bQ4yCkLYuEaIADuw6GKKwQJ1mY4nHDwsI7Ue5XbMtEVKIi6-HQmZuP8F-nfgm7HTwEjgbudOxGzzhU5BQhP-NbuT9wmVdq4jeVStjeMJotaAPHaC9rBa84VtI13besGsl8kEGAqaJnJmEhKXDR-Bz0MR5ji7JP5I3_xWCIcoczB1e_4k7I57Ua7E6aeeM0lc_Tpb5o6cQW34pVnV79oUmkjbX0PAzWT6uWDNwZ7mVRKzv_aNqWdoXX8w"/>
+</div>
+<p class="text-surface-variant text-sm">Joined by <span class="text-surface-bright font-semibold">500+ Top-tier Law Firms</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Panel: Login Form -->
+<section class="w-full lg:w-1/2 flex items-center justify-center p-8 lg:p-24 bg-surface-container-lowest">
+<div class="w-full max-w-md">
+<header class="mb-10">
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Welcome back</h2>
+<p class="text-on-secondary-container mt-2">Enter your credentials to access your account.</p>
+</header>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant">Email address</label>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-surface-container-low border-0 focus:ring-2 focus:ring-primary rounded-md text-sm placeholder:text-outline transition-all" placeholder="name@firm.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant">Password</label>
+<a class="text-primary text-xs font-semibold hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-surface-container-low border-0 focus:ring-2 focus:ring-primary rounded-md text-sm placeholder:text-outline transition-all" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-primary font-semibold text-xs uppercase tracking-tighter" type="button">Show</button>
+</div>
+</div>
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-md hover:opacity-90 active:scale-[0.98] transition-all shadow-lg shadow-primary/10" type="submit">
+                        Sign In
+                    </button>
+</form>
+<div class="relative my-10">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full h-[1px] bg-outline-variant opacity-30"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-surface-container-lowest px-4 text-xs font-bold text-outline uppercase tracking-widest">OR SIGN IN WITH</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-3 bg-surface-container-low hover:bg-surface-container-high transition-colors rounded-md border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-lg text-on-surface-variant group-hover:text-on-surface transition-colors">cloud</span>
+<span class="text-sm font-semibold text-on-surface-variant">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3 bg-surface-container-low hover:bg-surface-container-high transition-colors rounded-md border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-lg text-on-surface-variant group-hover:text-on-surface transition-colors">corporate_fare</span>
+<span class="text-sm font-semibold text-on-surface-variant">Microsoft</span>
+</button>
+</div>
+<footer class="mt-12 text-center">
+<p class="text-on-secondary-container text-sm">
+                        Don't have an account? 
+                        <a class="text-primary font-bold hover:underline ml-1" href="#">Sign Up</a>
+</p>
+</footer>
+</div>
+</section>
+</main>
+<!-- Global Footer (Shared Component Execution) -->
+<footer class="fixed bottom-0 w-full flex flex-row justify-between items-center px-8 py-4 bg-[#faf8ff] dark:bg-slate-950 z-50">
+<div class="bg-[#c3c5d9] dark:bg-slate-800 h-[1px] w-full absolute top-0 opacity-15 left-0"></div>
+<div class="flex items-center">
+<span class="font-['Inter'] text-xs tracking-wide uppercase text-[#57657a] dark:text-slate-500">© 2024 Legal Assistant AI. Precision Curated Intelligence.</span>
+</div>
+<div class="flex gap-6 items-center">
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-[#57657a] dark:text-slate-500 hover:text-[#131b2e] dark:hover:text-[#faf8ff] transition-all cursor-pointer opacity-80 hover:opacity-100">Terms of Service</a>
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-[#57657a] dark:text-slate-500 hover:text-[#131b2e] dark:hover:text-[#faf8ff] transition-all cursor-pointer opacity-80 hover:opacity-100">Privacy Policy</a>
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-[#57657a] dark:text-slate-500 hover:text-[#131b2e] dark:hover:text-[#faf8ff] transition-all cursor-pointer opacity-80 hover:opacity-100">Security Compliance</a>
+</div>
+</footer>
+</body></html>

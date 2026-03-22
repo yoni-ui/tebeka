@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LexiGen AI | Legal Intelligence Suite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#dae2fd",
+              "on-tertiary-fixed-variant": "#891e00",
+              "primary-fixed-dim": "#b7c4ff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#3c0800",
+              "on-tertiary-container": "#ffddd5",
+              "error": "#ba1a1a",
+              "surface-container-high": "#e2e7ff",
+              "on-surface": "#131b2e",
+              "surface": "#faf8ff",
+              "primary-container": "#0052ff",
+              "on-primary-fixed": "#001452",
+              "on-background": "#131b2e",
+              "secondary": "#515f74",
+              "inverse-on-surface": "#eef0ff",
+              "outline-variant": "#c3c5d9",
+              "on-primary-container": "#dfe3ff",
+              "surface-dim": "#d2d9f4",
+              "on-secondary-fixed-variant": "#3a485b",
+              "on-error": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#faf8ff",
+              "inverse-surface": "#283044",
+              "surface-container": "#eaedff",
+              "inverse-primary": "#b7c4ff",
+              "secondary-fixed": "#d5e3fc",
+              "on-error-container": "#93000a",
+              "surface-variant": "#dae2fd",
+              "surface-tint": "#004ced",
+              "on-surface-variant": "#434656",
+              "surface-container-low": "#f2f3ff",
+              "secondary-container": "#d5e3fc",
+              "on-primary-fixed-variant": "#0038b6",
+              "background": "#faf8ff",
+              "primary-fixed": "#dde1ff",
+              "primary": "#003ec7",
+              "outline": "#737688",
+              "tertiary-fixed-dim": "#ffb4a1",
+              "secondary-fixed-dim": "#b9c7df",
+              "tertiary": "#952200",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#57657a",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#bf3003",
+              "tertiary-fixed": "#ffdbd2",
+              "on-secondary-fixed": "#0d1c2e"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c3c5d9; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed-dim">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col h-screen w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 z-50">
+<div class="p-6">
+<div class="flex items-center gap-2 mb-8">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg" data-icon="gavel">gavel</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-100 font-headline">LexiGen AI</h1>
+<p class="text-[10px] uppercase tracking-widest text-outline font-bold">Precision Legal Intelligence</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-lg font-semibold shadow-md hover:opacity-90 transition-all active:scale-[0.98] mb-8">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+<span class="font-headline tracking-tight text-sm">New Analysis</span>
+</button>
+<nav class="space-y-1">
+<!-- Active Nav Item -->
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-tight">New Chat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-tight">Chat History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-tight">Upload Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-tight">My Analyses</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-tight">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-slate-200/60 dark:border-slate-800/60">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-tight">Help Center</span>
+</a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="ml-64 flex flex-col h-screen bg-surface">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex items-center justify-between px-8 h-16 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-6">
+<h2 class="text-on-surface font-headline font-bold text-lg">Legal Intelligence Suite</h2>
+<div class="h-4 w-[1px] bg-outline-variant opacity-30"></div>
+<div class="flex items-center gap-4">
+<a class="text-slate-500 hover:text-primary font-label text-sm font-semibold transition-colors" href="#">System Status</a>
+<a class="text-slate-500 hover:text-primary font-label text-sm font-semibold transition-colors" href="#">Docs</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-surface-container rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-surface-container rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Professional male lawyer profile picture headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmbpm4muJpFpqYlLf4GqAjU4VSTZStmCDr64y8Txp-hFXSePx4RDu9aS25GeTPu14UqwjthWGQiMKVbn_Fy7itKk2uClSgPkT3eEm2AJvEqsqcMaBPJuJeQsQVRpqkwMJwzWZHjtw928oKCR0D-htBKcc1QaBQWE8-8ypev3UCmmKmEqyRp5aMeGLLN7P1p4NEvEHt2ZBkwBXM_ICzwQZ-UXvLJZOFbe_jMKfkXBhu4MQF9mxgIpvGDjJhYFXQdcgWOG5NN8xbuw"/>
+</div>
+</div>
+</header>
+<!-- Chat Canvas -->
+<section class="flex-1 overflow-y-auto custom-scrollbar px-12 py-10 space-y-10 max-w-5xl mx-auto w-full">
+<!-- Disclaimer -->
+<div class="bg-surface-container-low border border-outline-variant/10 p-4 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-0.5" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="text-xs text-on-surface-variant font-body leading-relaxed">
+<span class="font-bold text-tertiary uppercase tracking-tighter">Legal Disclaimer:</span> This AI tool provides informational analysis based on indexed legal data and does not constitute legal advice. No attorney-client relationship is formed. Please consult a qualified legal professional for specific legal counsel.
+                </div>
+</div>
+<!-- User Query -->
+<div class="flex flex-col items-end space-y-2">
+<div class="bg-primary text-white px-5 py-3 rounded-2xl rounded-tr-none max-w-[80%] shadow-sm">
+<p class="text-sm font-medium">I'm reviewing a residential lease in California. What are the legal requirements for a security deposit, and can my landlord charge a non-refundable cleaning fee?</p>
+</div>
+<span class="text-[10px] text-outline font-bold uppercase tracking-widest mr-2">10:42 AM • You</span>
+</div>
+<!-- AI Response -->
+<div class="flex flex-col items-start space-y-4">
+<div class="flex items-center gap-2 ml-1">
+<div class="w-6 h-6 bg-primary-fixed-dim rounded-md flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xs" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="text-[10px] text-outline font-bold uppercase tracking-widest">LexiGen Intelligence • Analysis Complete</span>
+</div>
+<div class="space-y-6 w-full max-w-[90%]">
+<!-- Text Content -->
+<div class="bg-surface-container-lowest border border-outline-variant/5 p-6 rounded-2xl shadow-sm space-y-4">
+<p class="text-on-surface leading-relaxed text-sm">Under California Civil Code Section 1950.5, there are specific protections for residential tenants regarding security deposits.</p>
+<!-- Simple Explanation Bento -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4 rounded-xl border-l-4 border-primary">
+<h4 class="text-xs font-bold uppercase tracking-wider text-primary mb-2">Maximum Limits</h4>
+<p class="text-sm text-on-surface-variant">Landlords cannot charge more than <strong>2 months' rent</strong> for unfurnished units, or <strong>3 months' rent</strong> for furnished units.</p>
+</div>
+<div class="bg-surface-container p-4 rounded-xl border-l-4 border-tertiary">
+<h4 class="text-xs font-bold uppercase tracking-wider text-tertiary mb-2">Cleaning Fees</h4>
+<p class="text-sm text-on-surface-variant">In California, <strong>all security deposits are refundable</strong>. No portion of the deposit can be designated as "non-refundable," including cleaning fees.</p>
+</div>
+</div>
+<div class="pt-2">
+<h4 class="text-sm font-bold text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
+                                Key Provisions
+                            </h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1.5 shrink-0"></span>
+<span>The deposit must be returned within <strong>21 days</strong> of the tenant vacating the premises.</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1.5 shrink-0"></span>
+<span>Landlords must provide an itemized statement for any deductions over $125.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Sources / Citations -->
+<div class="flex flex-wrap gap-2 items-center">
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest mr-2">Verified Sources:</span>
+<a class="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-sm text-xs font-medium hover:bg-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-xs" data-icon="link">link</span>
+                            Cal. Civ. Code § 1950.5
+                        </a>
+<a class="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-sm text-xs font-medium hover:bg-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined text-xs" data-icon="link">link</span>
+                            CA Courts - Security Deposits
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Input Section -->
+<footer class="p-8 bg-surface-container-lowest border-t border-slate-100 dark:border-slate-800">
+<div class="max-w-4xl mx-auto space-y-4">
+<!-- Suggestion Chips -->
+<div class="flex flex-wrap gap-2 justify-center">
+<button class="px-4 py-1.5 bg-surface-container-low hover:bg-surface-container-highest border border-outline-variant/20 rounded-full text-xs font-medium text-on-surface-variant transition-all">
+                        Explain rental law
+                    </button>
+<button class="px-4 py-1.5 bg-surface-container-low hover:bg-surface-container-highest border border-outline-variant/20 rounded-full text-xs font-medium text-on-surface-variant transition-all">
+                        What happens if contract is broken?
+                    </button>
+<button class="px-4 py-1.5 bg-surface-container-low hover:bg-surface-container-highest border border-outline-variant/20 rounded-full text-xs font-medium text-on-surface-variant transition-all">
+                        Review my lease
+                    </button>
+</div>
+<!-- Input Field -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+</div>
+<input class="w-full pl-12 pr-24 py-4 bg-surface-container-low border border-outline-variant/10 rounded-xl focus:ring-2 focus:ring-primary-fixed focus:border-primary focus:outline-none transition-all text-sm" placeholder="Ask LexiGen about a contract, statute, or legal principle..." type="text"/>
+<div class="absolute inset-y-2 right-2 flex items-center gap-2">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="attach_file">attach_file</span>
+</button>
+<button class="bg-primary text-white p-2 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+<div class="flex justify-center">
+<p class="text-[10px] text-outline font-medium tracking-tight">Shift + Enter for new line • LexiGen v2.4.0</p>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

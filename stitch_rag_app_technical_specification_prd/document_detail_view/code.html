@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LexisAI | Document Analysis</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#515f74",
+              "tertiary-container": "#bf3003",
+              "on-secondary-fixed-variant": "#3a485b",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#131b2e",
+              "surface-container-high": "#e2e7ff",
+              "tertiary-fixed": "#ffdbd2",
+              "background": "#faf8ff",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "outline-variant": "#c3c5d9",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#57657a",
+              "on-primary-container": "#dfe3ff",
+              "primary-fixed": "#dde1ff",
+              "inverse-on-surface": "#eef0ff",
+              "surface-container-low": "#f2f3ff",
+              "primary-fixed-dim": "#b7c4ff",
+              "on-surface-variant": "#434656",
+              "on-tertiary-container": "#ffddd5",
+              "surface-container": "#eaedff",
+              "on-error": "#ffffff",
+              "inverse-primary": "#b7c4ff",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#0038b6",
+              "surface": "#faf8ff",
+              "surface-container-highest": "#dae2fd",
+              "surface-variant": "#dae2fd",
+              "surface-dim": "#d2d9f4",
+              "on-secondary-fixed": "#0d1c2e",
+              "tertiary-fixed-dim": "#ffb4a1",
+              "secondary-fixed-dim": "#b9c7df",
+              "secondary-container": "#d5e3fc",
+              "primary": "#003ec7",
+              "on-surface": "#131b2e",
+              "on-tertiary-fixed-variant": "#891e00",
+              "on-primary-fixed": "#001452",
+              "primary-container": "#0052ff",
+              "surface-tint": "#004ced",
+              "on-tertiary-fixed": "#3c0800",
+              "secondary-fixed": "#d5e3fc",
+              "outline": "#737688",
+              "error": "#ba1a1a",
+              "tertiary": "#952200",
+              "surface-bright": "#faf8ff",
+              "inverse-surface": "#283044"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-panel {
+            background: rgba(242, 243, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background antialiased overflow-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-md shadow-sm border-b border-slate-200/15 flex justify-between items-center px-6 py-3 max-w-full mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-slate-900 font-headline tracking-tight">LexisAI</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-manrope tracking-tight font-semibold text-slate-600 hover:text-blue-600 transition-colors" href="#">Dashboard</a>
+<a class="font-manrope tracking-tight font-semibold text-blue-700 border-b-2 border-blue-700 pb-1" href="#">History</a>
+<a class="font-manrope tracking-tight font-semibold text-slate-600 hover:text-blue-600 transition-colors" href="#">Library</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-100/50 rounded-md transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-100/50 rounded-md transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container overflow-hidden border border-outline-variant/20">
+<img alt="User Profile" data-alt="Professional user avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiKM7c2wFjDLR-8gRktGXilfnp_N4pNIXnYvIf4XyYRqkJ8C-K4m3Ae62fsQ5oc8pA-Uj8KjH9GZZZDE_z0NZ7B_YazBkXs7jpJGsrqET79A_9XcENBf5BBNduyNukOHDVx2tfF8qs8CQyUnLWBIYC_Jz2bSZhgJogcZFXaulGNiIq0XLpWb5zqu2co6Iqo4qYjN2VyWL2j5ISXtnFgXlrPsa-Zd-LWtKfM1K235Q81Qd9l73OqQxxHJS52CjL0mH5EKYHOBZaVQ"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Analysis Focused) -->
+<aside class="h-screen w-64 fixed left-0 top-0 pt-16 flex flex-col border-r border-slate-200/10 bg-slate-100 font-inter text-sm font-medium z-40">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-1">
+<span class="material-symbols-outlined text-primary">folder_open</span>
+<span class="font-bold text-slate-900">Case #8821</span>
+</div>
+<p class="text-xs text-slate-500 ml-9">Contract Review</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 bg-blue-50 text-blue-700 font-bold border-r-4 border-blue-600 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">description</span>
+                Document View
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">insights</span>
+                Analysis
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">warning</span>
+                Risk Report
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">segment</span>
+                Clauses
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-200/50 transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">download</span>
+                Export
+            </a>
+</nav>
+<div class="p-4 mt-auto border-t border-slate-200/50">
+<button class="w-full bg-primary hover:bg-primary-container text-white py-2.5 rounded-lg font-semibold shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Analysis
+            </button>
+<a class="flex items-center gap-3 px-3 py-2 mt-4 text-slate-500 hover:bg-slate-200/50 rounded" href="#">
+<span class="material-symbols-outlined">help</span>
+                Help Center
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pl-64 pt-16 h-screen flex flex-col">
+<!-- Action Toolbar -->
+<div class="h-14 border-b border-outline-variant/15 flex items-center justify-between px-8 bg-surface">
+<div class="flex items-center gap-4">
+<h1 class="font-headline font-bold text-lg">Master Service Agreement - TechFlow Inc.</h1>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-secondary-container text-on-secondary-container uppercase tracking-wider">Draft v2.4</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-on-surface-variant hover:bg-surface-container-high rounded-md transition-all">
+<span class="material-symbols-outlined text-lg">refresh</span>
+                    Re-analyze
+                </button>
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-on-surface-variant hover:bg-surface-container-high rounded-md transition-all">
+<span class="material-symbols-outlined text-lg">share</span>
+                    Share
+                </button>
+<button class="flex items-center gap-2 px-4 py-1.5 text-sm font-semibold bg-primary text-white rounded-md hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+                    Export to PDF
+                </button>
+</div>
+</div>
+<!-- Split Screen Container -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Original Document -->
+<section class="flex-1 bg-surface-container-low overflow-y-auto p-12 no-scrollbar">
+<div class="max-w-3xl mx-auto bg-white shadow-sm min-h-full p-16 font-serif leading-relaxed text-on-surface/90">
+<h2 class="text-2xl font-bold mb-8 border-b border-slate-100 pb-4">MASTER SERVICE AGREEMENT</h2>
+<p class="mb-6">This Master Service Agreement ("Agreement") is entered into as of October 24, 2023, by and between TechFlow Inc., a Delaware corporation ("Client") and LexiGen Solutions ("Provider").</p>
+<h3 class="font-bold text-lg mt-8 mb-4">1. Scope of Services</h3>
+<p class="mb-4">Provider shall perform the services described in each Statement of Work ("SOW") executed by the parties. Each SOW shall be subject to the terms and conditions of this Agreement.</p>
+<div class="relative group">
+<div class="absolute -left-4 top-0 bottom-0 w-1 bg-error rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<h3 class="font-bold text-lg mt-8 mb-4 flex items-center gap-2">
+                            2. Limitation of Liability
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-error-container text-on-error-container">HIGH RISK</span>
+</h3>
+<p class="mb-4 bg-error-container/20 p-2 rounded">
+                            Except for gross negligence or willful misconduct, in no event shall Provider's total aggregate liability for any claims, losses, or damages arising out of or in connection with this agreement exceed 
+                            <span class="bg-error/10 border-b-2 border-error font-semibold">five times (5x) the total fees paid by Client</span> 
+                            to Provider during the twelve months preceding the event giving rise to such liability.
+                        </p>
+</div>
+<h3 class="font-bold text-lg mt-8 mb-4">3. Intellectual Property</h3>
+<p class="mb-4">All deliverables provided to Client under an SOW shall be the sole and exclusive property of Client upon full payment of fees. Provider retains ownership of its pre-existing materials used in the performance of the services.</p>
+<div class="relative group">
+<div class="absolute -left-4 top-0 bottom-0 w-1 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<h3 class="font-bold text-lg mt-8 mb-4 flex items-center gap-2">
+                            4. Termination
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-secondary-container text-on-secondary-container">STANDARD</span>
+</h3>
+<p class="mb-4 bg-primary-container/5 p-2 rounded">
+                            Either party may terminate this Agreement or any SOW for convenience upon 
+                            <span class="bg-primary/10 border-b-2 border-primary font-semibold">thirty (30) days written notice</span> 
+                            to the other party. In the event of termination, Client shall pay Provider for all services performed through the effective date of termination.
+                        </p>
+</div>
+<p class="mt-12 text-slate-400 italic text-sm text-center">[Document continues for 12 more pages...]</p>
+</div>
+</section>
+<!-- Right Panel: AI Analysis (Asymmetric Bento Grid) -->
+<section class="w-[500px] border-l border-outline-variant/15 bg-surface overflow-y-auto no-scrollbar">
+<div class="p-8 space-y-8">
+<!-- Risk Detection Header -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline font-extrabold text-xl tracking-tight">Analysis Summary</h2>
+<div class="flex items-center gap-1">
+<span class="h-2 w-2 rounded-full bg-error"></span>
+<span class="h-2 w-2 rounded-full bg-tertiary-container/30"></span>
+<span class="h-2 w-2 rounded-full bg-on-secondary-container/20"></span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-error-container p-4 rounded-xl">
+<div class="text-error font-bold text-2xl">02</div>
+<div class="text-[10px] font-bold text-on-error-container uppercase tracking-widest">Critical Risks</div>
+</div>
+<div class="bg-secondary-container p-4 rounded-xl">
+<div class="text-secondary font-bold text-2xl">05</div>
+<div class="text-[10px] font-bold text-on-secondary-container uppercase tracking-widest">Fair Clauses</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-xl">
+<div class="text-primary font-bold text-2xl">88%</div>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Health Score</div>
+</div>
+</div>
+</div>
+<!-- Explain Like I'm 15 (Glassmorphism Card) -->
+<div class="glass-panel p-6 rounded-2xl border border-white/40 shadow-sm relative overflow-hidden">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<h3 class="font-headline font-bold text-sm">Explain like I'm 15</h3>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            Think of this contract like a high-stakes group project. The "Limitation of Liability" part is basically saying if they mess up, they'll only pay you back up to five times what you already paid them—which sounds like a lot, but if your business loses millions because of their error, it's actually a huge trap. The termination clause is fair: either side can quit with a month's notice.
+                        </p>
+<!-- Visual accent -->
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
+</div>
+<!-- Key Clauses Drilldown -->
+<div>
+<h3 class="font-headline font-bold text-sm mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">list_alt</span>
+                            Key Clauses Breakdown
+                        </h3>
+<div class="space-y-4">
+<!-- Clause Item 1 -->
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-error">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-error uppercase">Liability Limit</span>
+<span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer hover:text-primary transition-colors">open_in_new</span>
+</div>
+<p class="text-sm font-semibold mb-1">Clause 2.0: 5x Aggregate Fees</p>
+<p class="text-xs text-on-surface-variant">Market standard is usually 1-2x. 5x is favorable to you, but the definition of "fees" is narrow. Consider broadening it.</p>
+</div>
+<!-- Clause Item 2 -->
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-primary">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-primary uppercase">Termination</span>
+<span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer hover:text-primary transition-colors">open_in_new</span>
+</div>
+<p class="text-sm font-semibold mb-1">Clause 4.0: 30-Day Notice</p>
+<p class="text-xs text-on-surface-variant">Standard mutual termination for convenience. No significant risks identified here.</p>
+</div>
+<!-- Clause Item 3 -->
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-tertiary">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-tertiary uppercase">Intellectual Property</span>
+<span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer hover:text-primary transition-colors">open_in_new</span>
+</div>
+<p class="text-sm font-semibold mb-1">Clause 3.0: Ownership Split</p>
+<p class="text-xs text-on-surface-variant">Missing explicit language on "Work for Hire" status. This could lead to copyright disputes in certain jurisdictions.</p>
+</div>
+</div>
+</div>
+<!-- AI Citation Note -->
+<div class="p-4 bg-secondary-container/30 rounded-lg flex gap-3">
+<span class="material-symbols-outlined text-on-secondary-container">info</span>
+<p class="text-[11px] text-on-secondary-container leading-tight">
+                            This analysis was generated using the <span class="font-bold">Lexis-4 High-Fidelity model</span>. RAG retrieval confirmed 12 matching precedents in your Library.
+                        </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Contextual FAB (Hidden as per suppression rules for Detail screens) -->
+</body></html>

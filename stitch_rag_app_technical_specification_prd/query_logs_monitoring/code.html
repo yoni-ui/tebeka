@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#dae2fd",
+              "tertiary-container": "#bf3003",
+              "secondary-fixed-dim": "#b9c7df",
+              "outline-variant": "#c3c5d9",
+              "secondary-fixed": "#d5e3fc",
+              "on-tertiary-fixed": "#3c0800",
+              "on-primary": "#ffffff",
+              "surface-container-low": "#f2f3ff",
+              "surface-bright": "#faf8ff",
+              "on-tertiary-fixed-variant": "#891e00",
+              "primary-fixed-dim": "#b7c4ff",
+              "on-primary-container": "#dfe3ff",
+              "surface-container-highest": "#dae2fd",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#3a485b",
+              "inverse-on-surface": "#eef0ff",
+              "surface-tint": "#004ced",
+              "primary": "#003ec7",
+              "inverse-surface": "#283044",
+              "secondary": "#515f74",
+              "primary-container": "#0052ff",
+              "surface": "#faf8ff",
+              "on-primary-fixed": "#001452",
+              "inverse-primary": "#b7c4ff",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "outline": "#737688",
+              "tertiary-fixed-dim": "#ffb4a1",
+              "on-secondary-container": "#57657a",
+              "on-surface": "#131b2e",
+              "on-secondary": "#ffffff",
+              "background": "#faf8ff",
+              "on-surface-variant": "#434656",
+              "on-background": "#131b2e",
+              "surface-dim": "#d2d9f4",
+              "primary-fixed": "#dde1ff",
+              "secondary-container": "#d5e3fc",
+              "tertiary-fixed": "#ffdbd2",
+              "surface-container": "#eaedff",
+              "error": "#ba1a1a",
+              "tertiary": "#952200",
+              "on-secondary-fixed": "#0d1c2e",
+              "on-primary-fixed-variant": "#0038b6",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e2e7ff",
+              "on-tertiary-container": "#ffddd5",
+              "on-error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            font-size: 20px;
+        }
+        .glass-panel {
+            background: rgba(242, 243, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c3c5d9;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed">
+<nav class="fixed top-0 z-50 w-full flex justify-between items-center px-6 py-3 border-b border-[#c3c5d9]/15 bg-[#faf8ff] dark:bg-slate-950 font-['Manrope'] font-semibold text-sm tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#131b2e] dark:text-[#faf8ff]">Legal Intelligence Admin</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#57657a] hover:text-[#003ec7] transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-[#57657a] hover:text-[#003ec7] transition-colors duration-200" href="#">System Health</a>
+<a class="text-[#57657a] hover:text-[#003ec7] transition-colors duration-200" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined text-outline p-2 hover:bg-surface-container rounded-full cursor-pointer transition-all">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</div>
+<span class="material-symbols-outlined text-outline p-2 hover:bg-surface-container rounded-full cursor-pointer transition-all">help_outline</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Administrator Profile Picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_X3IIKXZWDI-0dPaW1TcUaH8UphJMuJPmzKYdNx9tZfxsK54skfGkTikBsiK8-B8MR8EFcUaFJ2AuHew3DU9EkJJWe5CkfWCWkj3MHQZQWAHSzysEmT8pCht5ZO_vrjDrOGVok06qQ7It6W6BzPbcoMDdUKQV6Jr04pVgfYIcuou8i1gS2AT-O_GSdJKDscdBgXVt5K1EuRis4w-U_yLXuPuDgOzL10qWUitBOcdlqAsg_Z9x3JYw2RcTpXm9pFPOrJI76krTsg"/>
+</div>
+</div>
+</nav>
+<aside class="hidden lg:flex flex-col h-screen w-64 fixed left-0 top-0 pt-16 bg-[#eaedff] dark:bg-slate-900 border-r border-[#c3c5d9]/15">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">balance</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-[#131b2e] dark:text-white leading-tight">Precision Curator</h2>
+<p class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider text-outline">Admin v2.4.0</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="text-[#57657a] px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs font-medium uppercase tracking-wider hover:bg-[#dae2fd]/50 transition-all" href="#">
+<span class="material-symbols-outlined">database</span>
+                    Knowledge Base
+                </a>
+<a class="text-[#57657a] px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs font-medium uppercase tracking-wider hover:bg-[#dae2fd]/50 transition-all" href="#">
+<span class="material-symbols-outlined">format_shapes</span>
+                    Chunk Editor
+                </a>
+<a class="bg-[#dae2fd] text-[#0052FF] rounded-md font-bold px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+                    Query Logs
+                </a>
+<a class="text-[#57657a] px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs font-medium uppercase tracking-wider hover:bg-[#dae2fd]/50 transition-all" href="#">
+<span class="material-symbols-outlined">memory</span>
+                    Model Config
+                </a>
+<a class="text-[#57657a] px-4 py-3 flex items-center gap-3 font-['Inter'] text-xs font-medium uppercase tracking-wider hover:bg-[#dae2fd]/50 transition-all" href="#">
+<span class="material-symbols-outlined">shield_person</span>
+                    User Access
+                </a>
+</nav>
+</div>
+<div class="mt-auto p-6 space-y-4">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-3 rounded text-xs font-bold uppercase tracking-widest shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                Deploy Updates
+            </button>
+<div class="flex flex-col gap-1 border-t border-outline-variant/20 pt-4">
+<a class="text-[#57657a] px-2 py-1 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-tighter hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">menu_book</span> Docs
+                </a>
+<a class="text-[#57657a] px-2 py-1 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-tighter hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">contact_support</span> Support
+                </a>
+</div>
+</div>
+</aside>
+<main class="lg:pl-64 pt-16 min-h-screen">
+<div class="p-8 max-w-7xl mx-auto space-y-8">
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<p class="font-label text-xs font-bold uppercase tracking-[0.2em] text-primary mb-1">System Monitoring</p>
+<h1 class="font-headline text-3xl font-extrabold text-on-surface tracking-tight">Query Intelligence Logs</h1>
+</div>
+<div class="flex gap-3">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-low rounded-lg border border-outline-variant/15">
+<span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+<span class="text-xs font-semibold text-on-surface-variant">Live Connection: Stable</span>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-3 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-sm font-bold uppercase tracking-wider text-outline">Query Volume (24h)</h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-[10px] font-bold text-outline uppercase">Success</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-[10px] font-bold text-outline uppercase">Error</span>
+</div>
+</div>
+</div>
+<div class="h-32 flex items-end gap-1.5 overflow-hidden">
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[55%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[35%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[70%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[85%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[95%]"></div>
+<div class="flex-1 bg-error/80 rounded-t-sm h-[20%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[75%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[90%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[65%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[50%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[80%]"></div>
+<div class="flex-1 bg-error/80 rounded-t-sm h-[15%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[88%]"></div>
+</div>
+</div>
+<div class="bg-primary text-white p-6 rounded-xl flex flex-col justify-between overflow-hidden relative">
+<div class="relative z-10">
+<p class="text-[10px] font-black uppercase tracking-widest opacity-70 mb-1">Total Requests</p>
+<h4 class="text-4xl font-extrabold tracking-tighter">842,109</h4>
+</div>
+<div class="relative z-10 mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-xs font-bold">+12.4% from yesterday</span>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">analytics</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/20 space-y-4">
+<div class="flex flex-col md:flex-row gap-4 justify-between">
+<div class="flex-1 relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" placeholder="Filter by keyword or query ID..." type="text"/>
+</div>
+<div class="flex gap-2">
+<select class="px-4 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-xs font-bold uppercase tracking-wider text-outline outline-none focus:border-primary">
+<option>All Status</option>
+<option>OK</option>
+<option>Error</option>
+<option>Flagged</option>
+</select>
+<select class="px-4 py-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-xs font-bold uppercase tracking-wider text-outline outline-none focus:border-primary">
+<option>All Models</option>
+<option>Groq Llama 3</option>
+<option>Gemini 1.5 Pro</option>
+</select>
+<button class="p-2.5 bg-surface-container-lowest border border-outline-variant/30 rounded-lg text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto custom-scrollbar rounded-xl border border-outline-variant/10">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant/10">
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-[0.15em] text-outline">User Question</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-[0.15em] text-outline">AI Response Preview</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-[0.15em] text-outline">Model</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-[0.15em] text-outline">Timestamp</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-[0.15em] text-outline">Status</th>
+</tr>
+</thead>
+<tbody class="bg-surface-container-lowest divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-5 align-top">
+<div class="w-64">
+<p class="text-xs font-semibold text-on-surface line-clamp-2">"Analyze the liability clause in the 2023 procurement contract for Vendor X."</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="w-80">
+<p class="text-[11px] text-on-surface-variant line-clamp-2">Based on Section 4.2 of the 2023 Procurement Contract, Vendor X maintains a limited liability cap of $2M...</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-on-surface/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+</div>
+<span class="text-[11px] font-bold text-on-surface">Groq Llama 3</span>
+</div>
+</td>
+<td class="px-6 py-5 align-top whitespace-nowrap">
+<p class="text-[11px] font-medium text-outline">Oct 24, 14:22:05</p>
+</td>
+<td class="px-6 py-5 align-top">
+<span class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 text-[10px] font-black uppercase">OK</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-5 align-top">
+<div class="w-64">
+<p class="text-xs font-semibold text-on-surface line-clamp-2">"Find all cases related to maritime law in the Gulf region from 2010-2015."</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="w-80">
+<p class="text-[11px] text-on-surface-variant line-clamp-2">Retrieving documents... Found 42 relevant citations. Formatting summary of precedence...</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-on-surface/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+</div>
+<span class="text-[11px] font-bold text-on-surface">Gemini 1.5 Pro</span>
+</div>
+</td>
+<td class="px-6 py-5 align-top whitespace-nowrap">
+<p class="text-[11px] font-medium text-outline">Oct 24, 14:21:48</p>
+</td>
+<td class="px-6 py-5 align-top">
+<span class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 text-[10px] font-black uppercase">OK</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-5 align-top">
+<div class="w-64">
+<p class="text-xs font-semibold text-on-surface line-clamp-2">"How do I bypass the internal compliance check for high-value wire transfers?"</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="w-80">
+<p class="text-[11px] text-error font-medium italic">Safety Filter Triggered: Request violates internal governance protocols on financial security.</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-on-surface/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+</div>
+<span class="text-[11px] font-bold text-on-surface">Groq Llama 3</span>
+</div>
+</td>
+<td class="px-6 py-5 align-top whitespace-nowrap">
+<p class="text-[11px] font-medium text-outline">Oct 24, 14:20:12</p>
+</td>
+<td class="px-6 py-5 align-top">
+<span class="px-2 py-1 rounded bg-amber-100 text-amber-700 text-[10px] font-black uppercase">Flagged</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-5 align-top">
+<div class="w-64">
+<p class="text-xs font-semibold text-on-surface line-clamp-2">"Summarize the recent changes to the GDRP Article 17 regarding 'Right to Erasure'."</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="w-80">
+<p class="text-[11px] text-on-surface-variant line-clamp-2">Timeout error during document retrieval. Vector store response latency exceeded 5000ms.</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-on-surface/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+</div>
+<span class="text-[11px] font-bold text-on-surface">Gemini 1.5 Pro</span>
+</div>
+</td>
+<td class="px-6 py-5 align-top whitespace-nowrap">
+<p class="text-[11px] font-medium text-outline">Oct 24, 14:18:55</p>
+</td>
+<td class="px-6 py-5 align-top">
+<span class="px-2 py-1 rounded bg-error-container text-error text-[10px] font-black uppercase">Error</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-5 align-top">
+<div class="w-64">
+<p class="text-xs font-semibold text-on-surface line-clamp-2">"Check conflict of interest for Partner Y in Project Alpha vs Beta."</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="w-80">
+<p class="text-[11px] text-on-surface-variant line-clamp-2">No direct conflict found. However, Partner Y was listed as a minor consultant for a subsidiary of Beta's parent company in 2019...</p>
+</div>
+</td>
+<td class="px-6 py-5 align-top">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-on-surface/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+</div>
+<span class="text-[11px] font-bold text-on-surface">Groq Llama 3</span>
+</div>
+</td>
+<td class="px-6 py-5 align-top whitespace-nowrap">
+<p class="text-[11px] font-medium text-outline">Oct 24, 14:15:30</p>
+</td>
+<td class="px-6 py-5 align-top">
+<span class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 text-[10px] font-black uppercase">OK</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between pt-4">
+<p class="text-xs font-medium text-outline">Showing <span class="text-on-surface">1 - 25</span> of 1,240 queries</p>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant/30 text-outline hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant/30 text-on-surface font-bold text-xs hover:bg-surface-container transition-all">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant/30 text-on-surface font-bold text-xs hover:bg-surface-container transition-all">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-outline">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant/30 text-on-surface font-bold text-xs hover:bg-surface-container transition-all">48</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant/30 text-outline hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-6 right-6 z-40 hidden lg:block">
+<button class="flex items-center gap-2 px-6 py-3 bg-inverse-surface text-inverse-on-surface rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all group">
+<span class="material-symbols-outlined animate-spin-slow">sync</span>
+<span class="text-xs font-bold uppercase tracking-widest">Live Auto-Update</span>
+</button>
+</div>
+</body></html>
