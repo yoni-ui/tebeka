@@ -1,0 +1,34 @@
+name: Deploy
+
+# CD is opt-in: set repository variable ENABLE_VERCEL = true and add Vercel secrets (see below).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "frontend/**"
+      - ".github/workflows/deploy.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-frontend-vercel:
+    name: Frontend → Vercel (production)
+    runs-on: ubuntu-latest
+    if: vars.ENABLE_VERCEL == 'true'
+    environment:
+      name: production
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: "--prod"
+          working-directory: frontend
